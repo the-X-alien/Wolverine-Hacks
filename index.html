@@ -6,34 +6,49 @@
   <title>Wolverine Hacks 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --primary: #1e2a38;
+      --accent: #00bcd4;
+      --gradient: linear-gradient(135deg, #1e2a38, #00bcd4);
+    }
+
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
-      background-color: #f5f7fa;
+      background: #f0f4f8;
       color: #333;
+      line-height: 1.6;
     }
+
     header {
-      background: #1e2a38;
+      background: var(--gradient);
       color: white;
       padding: 60px 20px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
+
     header h1 {
       font-size: 3em;
       margin: 0;
     }
+
     header p {
       font-size: 1.2em;
       margin-top: 10px;
     }
+
     #countdown {
       font-size: 1.5em;
       margin-top: 20px;
+      font-weight: bold;
     }
+
     nav {
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
       padding: 15px;
@@ -41,51 +56,90 @@
       top: 0;
       z-index: 1000;
     }
+
     nav a {
       text-decoration: none;
-      color: #1e2a38;
+      color: var(--primary);
       font-weight: 600;
+      transition: color 0.3s ease;
     }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
     section {
       padding: 60px 20px;
       max-width: 900px;
       margin: auto;
     }
+
     h2 {
-      color: #1e2a38;
+      color: var(--primary);
       margin-bottom: 20px;
+      font-size: 2em;
     }
+
     .sponsor-box {
-      background: #e0f7fa;
-      padding: 20px;
-      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
+
     .sponsor-logos {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
       margin-top: 20px;
+      justify-content: center;
     }
+
     .sponsor-logos img {
       height: 60px;
       object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
     }
+
     .btn {
       display: inline-block;
-      background: #1e2a38;
+      background: var(--gradient);
       color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
+      padding: 12px 24px;
+      border-radius: 30px;
       text-decoration: none;
-      margin-top: 10px;
+      margin-top: 15px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       border: none;
       cursor: pointer;
     }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
     footer {
-      background: #1e2a38;
+      background: var(--primary);
       color: white;
       text-align: center;
       padding: 30px 20px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+      nav {
+        gap: 15px;
+      }
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -172,13 +226,4 @@
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    timerElement.innerHTML = `${days}d ${hours}h ${minutes}m`;
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 60000);
-</script>
-
-</body>
-</html>
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60
