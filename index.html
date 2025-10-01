@@ -1,479 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wolverine Hacks 2026</title>
-
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* ---------- Base ---------- */
-    :root{
-      --accent:#00bcd4;
-      --dark:#1e2a38;
-      --muted:#f1f6f8;
-      --card:#ffffff;
-      --radius:12px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:"Nunito",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background:var(--muted);
-      color:var(--dark);
-      -webkit-font-smoothing:antialiased;
-      text-align:center;
-      line-height:1.45;
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: #f9fbfc;
+      color: #333;
+      text-align: center;
     }
 
-    /* ---------- Header / Hero ---------- */
-    header{
-      background:linear-gradient(180deg,var(--accent),#06a7be);
-      color:white;
-      padding:64px 20px 48px;
-      position:relative;
-    }
-    .signup-top{
-      position:absolute;
-      right:20px;
-      top:20px;
-      background:white;
-      color:var(--accent);
-      padding:10px 18px;
-      border-radius:999px;
-      font-weight:700;
-      text-decoration:none;
-      box-shadow:0 6px 18px rgba(0,0,0,0.12);
-    }
-    header h1{font-size:2.6rem;margin:0 0 6px}
-    header p{margin:0;font-weight:600;opacity:.95}
-
-    #countdown{
-      margin-top:18px;
-      font-weight:800;
-      background:rgba(255,255,255,0.12);
-      display:inline-block;
-      padding:10px 18px;
-      border-radius:999px;
-      font-size:1.05rem;
-      box-shadow:inset 0 -2px 0 rgba(0,0,0,0.08);
+    header {
+      background: #00bcd4;
+      color: white;
+      padding: 60px 20px;
+      position: relative;
     }
 
-    /* ---------- Nav ---------- */
-    nav{
-      background:var(--card);
-      display:flex;
-      gap:22px;
-      justify-content:center;
-      align-items:center;
-      padding:12px;
-      box-shadow:0 4px 18px rgba(30,42,56,0.06);
-      position:sticky;
-      top:0;
-      z-index:40;
-    }
-    nav a{color:var(--dark); font-weight:700; text-decoration:none; font-size:0.95rem}
-
-    /* ---------- Sections ---------- */
-    section{padding:56px 20px; max-width:980px; margin:0 auto}
-    h2{font-size:1.7rem;color:var(--dark);margin-bottom:18px}
-
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:0 8px 22px rgba(14,30,37,0.04);
-      margin-bottom:18px;
-      text-align:left;
+    header h1 {
+      font-size: 3em;
+      margin: 0;
     }
 
-    .btn{
-      display:inline-block;
-      background:var(--accent);
-      color:white;
-      padding:10px 18px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:800;
-      margin-top:10px;
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
     }
 
-    /* ---------- Organizers layout ---------- */
-    .organizers-wrap{display:grid; gap:22px; align-items:start}
-    /* grid with Dhiaan on top, 3 boxes in a row below on wide screens */
-    .top-organizer{justify-self:center; width:300px;}
-    .top-organizer img{width:120px;height:120px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 10px}
-    /* the three below */
-    .organizer-row{
-      display:grid;
-      gap:18px;
-      grid-template-columns:repeat(1,1fr);
-      justify-items:center;
-    }
-    .org{
-      width:260px;
-      background:var(--card);
-      border-radius:12px;
-      padding:18px;
-      box-shadow:0 8px 18px rgba(14,30,37,0.04);
-      text-align:center;
-    }
-    .org img{width:86px;height:86px;border-radius:50%;object-fit:cover;margin-bottom:8px}
-    .org .name{display:block;font-weight:800;color:var(--accent);text-decoration:none;margin-bottom:6px}
-
-    /* three in a row on medium+ screens */
-    @media(min-width:860px){
-      .organizer-row{grid-template-columns:repeat(3,260px)}
+    #countdown {
+      font-size: 1.5em;
+      margin-top: 20px;
+      font-weight: bold;
     }
 
-    /* ---------- FAQ with smooth slide ---------- */
-    .faq-item{max-width:780px;margin:12px auto;border-radius:8px;overflow:hidden}
-    .faq-question{
-      background:linear-gradient(90deg,white, #fbfeff);
-      padding:14px 18px;
-      cursor:pointer;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      font-weight:800;
-      border-bottom:1px solid rgba(30,42,56,0.06);
+    .signup-top {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      color: #00bcd4;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .faq-question small{opacity:.7;font-weight:600}
-    .faq-panel{
-      max-height:0; /* collapsed */
-      overflow:hidden;
-      transition:max-height 320ms cubic-bezier(.2,.9,.2,1), padding 240ms;
-      padding:0 18px;
-      background:var(--card);
-    }
-    .faq-panel.open{
-      /* big enough to contain content; JS will set scrollHeight to max-height for exact fit */
-      padding:12px 18px 18px;
-    }
-    .faq-answer{color:#1d2a33;line-height:1.5}
 
-    /* ---------- Footer / footbar ---------- */
-    footer{
-      background:#0f1720;
-      color:rgba(255,255,255,0.95);
-      padding:18px;
-      text-align:center;
-      font-size:0.95rem;
+    nav {
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    .footline{opacity:.9}
-    .muted-small{opacity:.75;font-size:.88rem;margin-top:6px}
 
-    /* small helpers */
-    .center{text-align:center}
+    nav a {
+      text-decoration: none;
+      color: #1e2a38;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #1e2a38;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00bcd4;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 15px;
+    }
+
+    /* Organizers */
+    .organizers-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lead-organizer {
+      margin-bottom: 40px;
+    }
+
+    .lead-organizer .organizer {
+      margin: 0 auto;
+    }
+
+    .organizer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .organizer {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .organizer img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .organizer a {
+      font-weight: 700;
+      color: #00bcd4;
+      text-decoration: none;
+      display: block;
+    }
+
+    .faq-item {
+      text-align: left;
+      margin: 10px auto;
+      max-width: 700px;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #1e2a38;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <a class="signup-top" href="https://forms.fillout.com/t/kkYbJwHq3pus" target="_blank" rel="noopener">Sign Up</a>
+<header>
+  <a class="signup-top" href="https://forms.fillout.com/t/kkYbJwHq3pus" target="_blank">Sign Up</a>
+  <h1>Wolverine Hacks 2026</h1>
+  <p>February 2026 • Thomas Russell Middle School • Organized by the Thomas Russell STEAM Club</p>
+  <div id="countdown">Countdown: <span id="timer">Loading...</span></div>
+</header>
 
-    <h1>Wolverine Hacks 2026</h1>
-    <p>February 15, 2026 • Thomas Russell Middle School • Organized by the Thomas Russell STEAM Club</p>
+<nav>
+  <a href="#about">About</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#sponsor">Sponsor</a>
+  <a href="#register">Register</a>
+  <a href="#organizers">Organizers</a>
+  <a href="#faq">FAQ</a>
+</nav>
 
-    <div id="countdown">Countdown: <span id="timer">Loading...</span></div>
-  </header>
+<section id="about">
+  <h2>About the Hackathon</h2>
+  <div class="card">
+    <p>Wolverine Hacks is the first and largest hackathon run entirely by middle schoolers in the Bay Area. Join us this February for creativity, coding, good vibes, and collaboration at Thomas Russell Middle School. We can't wait to see your creations!</p>
+  </div>
+</section>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#schedule">Schedule</a>
-    <a href="#sponsor">Sponsor</a>
-    <a href="#register">Register</a>
-    <a href="#organizers">Organizers</a>
-    <a href="#faq">FAQ</a>
-  </nav>
+<section id="schedule">
+  <h2>Schedule</h2>
+  <div class="card">
+    <p><em>The full schedule is currently TBD. We are finalizing whether the event will run for 12 or 24 hours. Stay tuned for updates!</em></p>
+  </div>
+</section>
 
-  <main>
-    <section id="about">
-      <h2>About Wolverine Hacks</h2>
-      <div class="card">
-        <p>Wolverine Hacks is a student-run middle-school hackathon focused on creativity, learning, and having fun while building projects. Students bring ideas, collaborate, and ship something in a single day.</p>
+<section id="sponsor">
+  <h2>Why Sponsor Wolverine Hacks?</h2>
+  <div class="card">
+    <p>By sponsoring Wolverine Hacks, you're investing in the next generation of innovators. Your support helps us provide resources, prizes, food, and mentorship to young students exploring technology and entrepreneurship. Sponsors will be featured on our website, promotional materials, and during the event.</p>
+    <p><strong>Interested in sponsoring?</strong> Email us at <a href="mailto:dhiaan.n.d@gmail.com">dhiaan.n.d@gmail.com</a></p>
+  </div>
+</section>
+
+<section id="register">
+  <h2>Register</h2>
+  <div class="card">
+    <p>Ready to join Wolverine Hacks? Sign up using the form below:</p>
+    <a class="btn" href="https://forms.fillout.com/t/kkYbJwHq3pus" target="_blank">Go to Registration Form</a>
+    <p>Want to connect with other participants and organizers?</p>
+    <a class="btn" href="https://discord.gg/wDJgZkUmwq" target="_blank">Join Our Discord</a>
+  </div>
+</section>
+
+<section id="organizers">
+  <h2>Organizers</h2>
+  <div class="organizers-wrapper">
+    <div class="lead-organizer">
+      <div class="organizer">
+        <img src="https://via.placeholder.com/150?text=Dhiaan" alt="Dhiaan Dave">
+        <a href="https://dhiaandave.vercel.app" target="_blank">Dhiaan Dave</a>
+        <small>Club President</small>
       </div>
-    </section>
-
-    <section id="schedule">
-      <h2>Schedule</h2>
-      <div class="card">
-        <p><em>We expect to start at 9:00 AM on Feb 15, 2026. Final schedule (workshops, mentor hours, judging) will be posted soon.</em></p>
+    </div>
+    <div class="organizer-grid">
+      <div class="organizer">
+        <img src="https://via.placeholder.com/150?text=Sid" alt="Sid Menon">
+        <a href="#">Sid Menon</a>
+        <small>Vice President</small>
       </div>
-    </section>
-
-    <section id="sponsor">
-      <h2>Why Sponsor</h2>
-      <div class="card">
-        <p>Support local students. Sponsor funds cover food, swag, prizes, and venue costs. Sponsors are acknowledged during the event and on printed materials. Email: <a href="mailto:dhiaan.n.d@gmail.com">dhiaan.n.d@gmail.com</a></p>
+      <div class="organizer">
+        <img src="https://via.placeholder.com/150?text=Vivaan" alt="Vivaan Gupta">
+        <a href="#">Vivaan Gupta</a>
+        <small>Secretary</small>
       </div>
-    </section>
-
-    <section id="register">
-      <h2>Register</h2>
-      <div class="card center">
-        <p>Sign up now — spaces are limited.</p>
-        <a class="btn" href="https://forms.fillout.com/t/kkYbJwHq3pus" target="_blank" rel="noopener">Registration Form</a>
-        <p class="muted-small">Join our Discord for updates and team channels.</p>
-        <a class="btn" href="https://discord.gg/wDJgZkUmwq" target="_blank" rel="noopener" style="margin-left:10px">Discord</a>
+      <div class="organizer">
+        <img src="https://via.placeholder.com/150?text=Ansh" alt="Ansh Patel">
+        <a href="#">Ansh Patel</a>
+        <small>Treasurer</small>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- ---------- Organizers (Dhiaan on top, three boxes below) ---------- -->
-    <section id="organizers">
-      <h2>Organizers</h2>
+<section id="faq">
+  <h2>FAQ</h2>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Who can participate?</span><span>+</span>
+    </div>
+    <div class="faq-answer">All middle and high school students are welcome, regardless of prior experience!</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Do I need a team?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Nope! You can work solo or we’ll help you find teammates at the event.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Does it cost anything?</span><span>+</span>
+    </div>
+    <div class="faq-answer">No, Wolverine Hacks is completely free thanks to our sponsors.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>What should I bring?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Bring a laptop, charger, and a sleeping bag. Sleeping bag is required if you plan to stay overnight!</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Do I need prior coding experience?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Not at all! We’ll have mentors and workshops for all skill levels.</div>
+  </div>
+</section>
 
-      <div class="organizers-wrap">
-        <!-- Dhiaan's box on top, centered -->
-        <div class="top-organizer org" aria-label="Dhiaan Dave - Club President">
-          <img src="https://via.placeholder.com/240?text=Dhiaan" alt="Dhiaan Dave">
-          <a class="name" href="https://dhiaandave.vercel.app" target="_blank" rel="noopener">Dhiaan Dave</a>
-          <div style="font-weight:700;color:#4a5568">Club President</div>
-        </div>
+<footer>
+  <p>© 2026 Wolverine Hacks • Made with ❤️ by Dhiaan Dave & Team</p>
+</footer>
 
-        <!-- row of three organizers beneath -->
-        <div class="organizer-row" role="list">
-          <div class="org" role="listitem">
-            <img src="https://via.placeholder.com/240?text=Sid" alt="Sid Menon">
-            <span class="name">Sid Menon</span>
-            <div style="font-weight:700;color:#4a5568">Vice President</div>
-          </div>
+<script>
+  // Countdown Timer
+  const eventDate = new Date("February 21, 2026 09:00:00").getTime();
+  const timerElement = document.getElementById("timer");
 
-          <div class="org" role="listitem">
-            <img src="https://via.placeholder.com/240?text=Vivaan" alt="Vivaan Gupta">
-            <span class="name">Vivaan Gupta</span>
-            <div style="font-weight:700;color:#4a5568">Secretary</div>
-          </div>
+  setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
 
-          <div class="org" role="listitem">
-            <img src="https://via.placeholder.com/240?text=Ansh" alt="Ansh Patel">
-            <span class="name">Ansh Patel</span>
-            <div style="font-weight:700;color:#4a5568">Treasurer</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ---------- FAQ with animated panels ---------- -->
-    <section id="faq">
-      <h2>FAQ</h2>
-
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Who can participate?</span>
-          <small>+</small>
-        </div>
-        <div class="faq-panel" aria-hidden="true">
-          <div class="faq-answer">
-            Students under 18 from middle and junior high levels. Beginners and experienced coders are welcome.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Do I need a team?</span>
-          <small>+</small>
-        </div>
-        <div class="faq-panel" aria-hidden="true">
-          <div class="faq-answer">
-            You can come solo or with a team. We run team-matching at check-in if you'd like help finding teammates.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Is there a cost?</span>
-          <small>+</small>
-        </div>
-        <div class="faq-panel" aria-hidden="true">
-          <div class="faq-answer">
-            No — Wolverine Hacks is free to attend. Sponsors help cover food, prizes, and swag.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>What should I bring?</span>
-          <small>+</small>
-        </div>
-        <div class="faq-panel" aria-hidden="true">
-          <div class="faq-answer">
-            Bring a laptop, charger, and your ID. <strong>Sleeping bag is required</strong> for overnight projects — please pack one. Water bottle and personal snacks are helpful.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Will there be mentors?</span>
-          <small>+</small>
-        </div>
-        <div class="faq-panel" aria-hidden="true">
-          <div class="faq-answer">
-            Yes — we have mentors and teachers available throughout the event to help with technical and project guidance.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Prizes & judging?</span>
-          <small>+</small>
-        </div>
-        <div class="faq-panel" aria-hidden="true">
-          <div class="faq-answer">
-            Multiple prize categories (beginner, technical, creativity). Judges are staff, mentors, and guest volunteers. More details coming soon.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Accessibility & safety</span>
-          <small>+</small>
-        </div>
-        <div class="faq-panel" aria-hidden="true">
-          <div class="faq-answer">
-            We welcome participants of all abilities. If you need accommodations, contact us at <a href="mailto:dhiaan.n.d@gmail.com">dhiaan.n.d@gmail.com</a>.
-          </div>
-        </div>
-      </div>
-
-    </section>
-  </main>
-
-  <footer>
-    <div class="footline">© 2026 Wolverine Hacks — made with &lt;3 by Dhiaan Dave</div>
-    <div class="muted-small">Thomas Russell Middle School • February 15, 2026</div>
-  </footer>
-
-  <script>
-    // --------------------
-    // Countdown timer
-    // --------------------
-    // Simple and explicit so it's easy to read
-    function updateCountdown() {
-      // Set the event datetime (local time)
-      var eventTime = new Date("Feb 15, 2026 09:00:00").getTime();
-      var now = Date.now();
-      var diff = eventTime - now;
-
-      var timerEl = document.getElementById("timer");
-
-      if (diff <= 0) {
-        timerEl.textContent = "Event has started!";
-        return;
-      }
-
-      var seconds = Math.floor(diff / 1000);
-      var days = Math.floor(seconds / (60*60*24));
-      seconds -= days * 60*60*24;
-      var hours = Math.floor(seconds / (60*60));
-      seconds -= hours * 60*60;
-      var minutes = Math.floor(seconds / 60);
-      seconds = seconds - minutes*60;
-
-      // show a friendly compact countdown string
-      timerEl.textContent = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+    if (distance <= 0) {
+      timerElement.innerHTML = "The event has started!";
+      return;
     }
 
-    // run once immediately so "Loading..." doesn't stick
-    updateCountdown();
-    // then every second
-    setInterval(updateCountdown, 1000);
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // --------------------
-    // FAQ toggle with smooth slide
-    // --------------------
-    // toggles the panel open/closed using max-height for an animated effect
-    function toggleFaq(el) {
-      var panel = el.nextElementSibling;
-      var isOpen = panel.classList.contains('open');
+    timerElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+  }, 1000);
 
-      if (isOpen) {
-        // collapse
-        panel.style.maxHeight = panel.scrollHeight + "px"; // set to current for transition
-        // tiny delay so transition runs from current height to 0
-        requestAnimationFrame(function(){
-          panel.style.maxHeight = "0px";
-        });
-        panel.classList.remove('open');
-        el.querySelector('small').textContent = '+';
-        el.setAttribute('aria-expanded','false');
-        panel.setAttribute('aria-hidden','true');
-      } else {
-        // expand
-        panel.classList.add('open');
-        panel.style.maxHeight = panel.scrollHeight + "px";
-        el.querySelector('small').textContent = '−';
-        el.setAttribute('aria-expanded','true');
-        panel.setAttribute('aria-hidden','false');
-
-        // clear maxHeight after transition so content can grow naturally (optional)
-        panel.addEventListener('transitionend', function clearMax(e){
-          if (panel.classList.contains('open')) {
-            panel.style.maxHeight = 'none';
-          }
-          panel.removeEventListener('transitionend', clearMax);
-        });
-      }
-    }
-
-    // Keyboard accessibility: let Enter/Space toggle when focused
-    document.addEventListener('keydown', function(e){
-      if ((e.key === 'Enter' || e.key === ' ') && document.activeElement && document.activeElement.classList.contains('faq-question')) {
-        e.preventDefault();
-        toggleFaq(document.activeElement);
-      }
-    });
-
-    // attach tabindex and keyboard listeners for faq-question (in case not focused)
-    (function attachFaqKeyboard() {
-      var qs = document.querySelectorAll('.faq-question');
-      qs.forEach(function(q){
-        q.tabIndex = 0;
-        q.addEventListener('keydown', function(ev){
-          if (ev.key === 'Enter' || ev.key === ' ') {
-            ev.preventDefault();
-            toggleFaq(q);
-          }
-        });
-      });
-    })();
-
-    // --------------------
-    // Small safeguard: remove duplicate organizers if present dynamically
-    // (this helps if you paste this into an existing page that has duplicates)
-    // --------------------
-    (function dedupeOrganizers(){
-      try {
-        // collect names in the organizers area
-        var names = new Set();
-        var items = document.querySelectorAll('#organizers .org');
-        items.forEach(function(item){
-          // grab name text (first element with class name or link)
-          var nameEl = item.querySelector('.name');
-          var txt = nameEl ? nameEl.textContent.trim() : '';
-          if (txt) {
-            if (names.has(txt)) {
-              // remove duplicate element
-              item.parentNode && item.parentNode.removeChild(item);
-            } else {
-              names.add(txt);
-            }
-          }
-        });
-      } catch (e){
-        // if anything goes wrong, silently continue - not critical
-        console.warn('dedupeOrganizers error', e);
-      }
-    })();
-
-  </script>
+  // FAQ Toggle
+  function toggleFAQ(el) {
+    const answer = el.nextElementSibling;
+    answer.style.display = answer.style.display === "block" ? "none" : "block";
+  }
+</script>
 </body>
 </html>
