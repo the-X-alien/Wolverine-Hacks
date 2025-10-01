@@ -7,30 +7,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --primary: #1e2a38;
-      --accent: #00bcd4;
-      --gradient: linear-gradient(135deg, #1e2a38, #00bcd4);
+      --bg: #0f1117;
+      --card: rgba(255, 255, 255, 0.05);
+      --text: #e0e0e0;
+      --accent: #00ffe0;
+      --accent-hover: #00c8b5;
+      --glass: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
-      background: #f0f4f8;
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
     header {
-      background: var(--gradient);
-      color: white;
-      padding: 60px 20px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 80px 20px 40px;
+      background: radial-gradient(circle at top, #1a1f2b, #0f1117);
     }
 
     header h1 {
       font-size: 3em;
       margin: 0;
+      color: var(--accent);
     }
 
     header p {
@@ -42,30 +48,31 @@
       font-size: 1.5em;
       margin-top: 20px;
       font-weight: bold;
+      color: var(--accent);
     }
 
     nav {
-      background: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      flex-wrap: wrap;
+      gap: 25px;
       padding: 15px;
+      background: #1a1f2b;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
     nav a {
+      color: var(--accent);
       text-decoration: none;
-      color: var(--primary);
       font-weight: 600;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--accent-hover);
     }
 
     section {
@@ -75,17 +82,17 @@
     }
 
     h2 {
-      color: var(--primary);
-      margin-bottom: 20px;
       font-size: 2em;
+      color: var(--accent);
+      margin-bottom: 20px;
     }
 
     .sponsor-box {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(10px);
+      background: var(--glass);
+      backdrop-filter: blur(12px);
       border-radius: 12px;
       padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
     .sponsor-logos {
@@ -99,31 +106,32 @@
     .sponsor-logos img {
       height: 60px;
       object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
     }
 
     .btn {
       display: inline-block;
-      background: var(--gradient);
-      color: white;
+      background: var(--accent);
+      color: #0f1117;
       padding: 12px 24px;
       border-radius: 30px;
       text-decoration: none;
       margin-top: 15px;
       font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
       border: none;
       cursor: pointer;
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      background: var(--accent-hover);
     }
 
     footer {
-      background: var(--primary);
-      color: white;
+      background: #1a1f2b;
+      color: #aaa;
       text-align: center;
       padding: 30px 20px;
       font-size: 0.9em;
@@ -162,7 +170,7 @@
 
 <section id="about">
   <h2>About the Hackathon</h2>
-  <p>Wolverine Hacks is a student-led hackathon hosted at Thomas Russell Middle School, bringing together young innovators, coders, and creators for a day of building, learning, and fun. Whether you're a beginner or a seasoned hacker, this event is designed to spark creativity and collaboration.</p>
+  <p>Wolverine Hacks is the first and largest hackathon run entirely by middle schoolers in the Bay Area. Join us this February for a day of creativity, coding, and collaboration at Thomas Russell Middle School—where young minds build bold ideas.</p>
 </section>
 
 <section id="schedule">
@@ -212,18 +220,18 @@
 </footer>
 
 <script>
-  const eventDate = new Date("February 1, 2026 09:00:00").getTime();
-  const timerElement = document.getElementById("timer");
+  document.addEventListener("DOMContentLoaded", function () {
+    const eventDate = new Date("February 1, 2026 09:00:00").getTime();
+    const timerElement = document.getElementById("timer");
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
 
-    if (distance < 0) {
-      timerElement.innerHTML = "Event is live!";
-      return;
-    }
+      if (distance < 0) {
+        timerElement.innerHTML = "Event is live!";
+        return;
+      }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((
