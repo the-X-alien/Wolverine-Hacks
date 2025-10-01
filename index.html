@@ -110,10 +110,6 @@
       margin-bottom: 40px;
     }
 
-    .lead-organizer .organizer {
-      margin: 0 auto;
-    }
-
     .organizer-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -127,6 +123,7 @@
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      width: 100%;
     }
 
     .organizer img {
@@ -142,8 +139,16 @@
       color: #00bcd4;
       text-decoration: none;
       display: block;
+      font-size: 1.1em;
     }
 
+    .organizer small {
+      display: block;
+      margin-top: 5px;
+      color: #666;
+    }
+
+    /* FAQ */
     .faq-item {
       text-align: left;
       margin: 10px auto;
@@ -186,6 +191,7 @@
 <nav>
   <a href="#about">About</a>
   <a href="#schedule">Schedule</a>
+  <a href="#prizes">Prizes</a>
   <a href="#sponsor">Sponsor</a>
   <a href="#register">Register</a>
   <a href="#organizers">Organizers</a>
@@ -203,6 +209,20 @@
   <h2>Schedule</h2>
   <div class="card">
     <p><em>The full schedule is currently TBD. We are finalizing whether the event will run for 12 or 24 hours. Stay tuned for updates!</em></p>
+  </div>
+</section>
+
+<section id="prizes">
+  <h2>Prizes</h2>
+  <div class="card">
+    <p>We’ll be awarding exciting prizes to the top projects, including:</p>
+    <ul style="text-align:left; max-width:600px; margin:auto;">
+      <li><strong>1st Place:</strong> $200 Amazon Gift Cards + Trophies</li>
+      <li><strong>2nd Place:</strong> $100 Amazon Gift Cards</li>
+      <li><strong>3rd Place:</strong> $50 Amazon Gift Cards</li>
+      <li>Special category prizes for Best Beginner Hack, Best Design, and Best Use of AI!</li>
+    </ul>
+    <p><em>Exact prizes may change as sponsors are confirmed.</em></p>
   </div>
 </section>
 
@@ -256,36 +276,18 @@
 
 <section id="faq">
   <h2>FAQ</h2>
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-      <span>Who can participate?</span><span>+</span>
-    </div>
-    <div class="faq-answer">All middle and high school students are welcome, regardless of prior experience!</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-      <span>Do I need a team?</span><span>+</span>
-    </div>
-    <div class="faq-answer">Nope! You can work solo or we’ll help you find teammates at the event.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-      <span>Does it cost anything?</span><span>+</span>
-    </div>
-    <div class="faq-answer">No, Wolverine Hacks is completely free thanks to our sponsors.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-      <span>What should I bring?</span><span>+</span>
-    </div>
-    <div class="faq-answer">Bring a laptop, charger, and a sleeping bag. Sleeping bag is required if you plan to stay overnight!</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFAQ(this)">
-      <span>Do I need prior coding experience?</span><span>+</span>
-    </div>
-    <div class="faq-answer">Not at all! We’ll have mentors and workshops for all skill levels.</div>
-  </div>
+
+  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Who can participate?</span><span>+</span></div><div class="faq-answer">All middle and high school students are welcome, regardless of prior experience!</div></div>
+  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Do I need a team?</span><span>+</span></div><div class="faq-answer">Nope! You can work solo or we’ll help you find teammates at the event.</div></div>
+  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Does it cost anything?</span><span>+</span></div><div class="faq-answer">No, Wolverine Hacks is completely free thanks to our sponsors.</div></div>
+  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>What should I bring?</span><span>+</span></div><div class="faq-answer">Bring a laptop, charger, and a sleeping bag (required if staying overnight), plus anything else you need to hack comfortably.</div></div>
+  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Do I need prior coding experience?</span><span>+</span></div><div class="faq-answer">Not at all! We’ll have mentors and workshops for all skill levels.</div></div>
+  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Will food be provided?</span><span>+</span></div><div class="faq-answer">Yes! We’ll provide meals, snacks, and drinks throughout the event.</div></div>
+  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>What can I build?</span><span>+</span></div><div class="faq-answer">Anything you want—apps, websites, games, or even hardware projects if you bring supplies!</div></div>
+  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>How are projects judged?</span><span>+</span></div><div class="faq-answer">Judges will evaluate based on creativity, technical difficulty, design, and presentation.</div></div>
+  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>What if I don’t finish my project?</span><span>+</span></div><div class="faq-answer">That’s totally okay! Hackathons are about learning and having fun, not just winning.</div></div>
+  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>More questions?</span><span>+</span></div><div class="faq-answer">Feel free to email us at <a href="mailto:dhiaan.n.d@gmail.com">dhiaan.n.d@gmail.com</a>.</div></div>
+
 </section>
 
 <footer>
