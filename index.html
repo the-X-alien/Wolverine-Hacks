@@ -2,28 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wolverine Hacks 2026</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --primary: #1e2a38;
-      --accent: #00bcd4;
-      --bg: #f9fbfc;
-      --card: #ffffff;
-      --text: #333;
-    }
-
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: #f9fbfc;
+      color: #333;
       text-align: center;
     }
 
     header {
-      background: var(--accent);
+      background: #00bcd4;
       color: white;
       padding: 60px 20px;
       position: relative;
@@ -50,17 +42,12 @@
       top: 20px;
       right: 20px;
       background: white;
-      color: var(--accent);
+      color: #00bcd4;
       padding: 10px 20px;
       border-radius: 30px;
       font-weight: 700;
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: background 0.3s ease;
-    }
-
-    .signup-top:hover {
-      background: #e0f7fa;
     }
 
     nav {
@@ -77,13 +64,8 @@
 
     nav a {
       text-decoration: none;
-      color: var(--primary);
+      color: #1e2a38;
       font-weight: 700;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent);
     }
 
     section {
@@ -93,47 +75,28 @@
     }
 
     h2 {
-      color: var(--primary);
+      color: #1e2a38;
       margin-bottom: 20px;
       font-size: 2em;
     }
 
     .card {
-      background: var(--card);
+      background: white;
       border-radius: 12px;
       padding: 30px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      display: inline-block;
-      text-align: center;
-    }
-
-    .sponsor-logos {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-      justify-content: center;
-    }
-
-    .sponsor-logos img {
-      height: 60px;
-      object-fit: contain;
+      margin-bottom: 40px;
     }
 
     .btn {
       display: inline-block;
-      background: var(--accent);
+      background: #00bcd4;
       color: white;
       padding: 12px 24px;
       border-radius: 30px;
       text-decoration: none;
-      margin-top: 15px;
       font-weight: 700;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #0097a7;
+      margin-top: 15px;
     }
 
     .organizer-grid {
@@ -141,25 +104,27 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
-      margin-top: 30px;
     }
 
     .organizer {
-      width: 150px;
-      text-align: center;
+      width: 250px;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .organizer img {
-      width: 100%;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      object-fit: cover;
+      margin-bottom: 10px;
     }
 
     .organizer a {
-      display: block;
-      margin-top: 10px;
       font-weight: 700;
-      color: var(--accent);
+      color: #00bcd4;
       text-decoration: none;
     }
 
@@ -175,8 +140,8 @@
       cursor: pointer;
       font-weight: 700;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .faq-answer {
@@ -185,25 +150,11 @@
     }
 
     footer {
-      background: var(--primary);
+      background: #1e2a38;
       color: white;
       text-align: center;
       padding: 30px 20px;
       font-size: 0.9em;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2em;
-      }
-      nav {
-        gap: 15px;
-        flex-wrap: wrap;
-      }
-      .btn, .signup-top {
-        width: 100%;
-        text-align: center;
-      }
     }
   </style>
 </head>
@@ -243,13 +194,7 @@
   <h2>Why Sponsor Wolverine Hacks?</h2>
   <div class="card">
     <p>By sponsoring Wolverine Hacks, you're investing in the next generation of innovators. Your support helps us provide resources, prizes, food, and mentorship to young students exploring technology and entrepreneurship. Sponsors will be featured on our website, promotional materials, and during the event.</p>
-    <p>We offer tiered sponsorship packages and are happy to customize benefits to align with your brand's goals.</p>
     <p><strong>Interested in sponsoring?</strong> Email us at <a href="mailto:dhiaan.n.d@gmail.com">dhiaan.n.d@gmail.com</a></p>
-    <div class="sponsor-logos">
-      <img src="https://via.placeholder.com/150x60?text=Sponsor+1" alt="Sponsor 1"/>
-      <img src="https://via.placeholder.com/150x60?text=Sponsor+2" alt="Sponsor 2"/>
-      <img src="https://via.placeholder.com/150x60?text=Sponsor+3" alt="Sponsor 3"/>
-    </div>
   </div>
 </section>
 
@@ -265,6 +210,34 @@
 
 <section id="organizers">
   <h2>Organizers</h2>
+  <div class="organizer" style="margin: 0 auto 40px;">
+    <img src="https://via.placeholder.com/150?text=Dhiaan" alt="Dhiaan Dave">
+    <a href="https://dhiaandave.vercel.app" target="_blank">Dhiaan Dave<br><small>Club President</small></a>
+  </div>
   <div class="organizer-grid">
     <div class="organizer">
-      <img src="https://via.placeholder.com/150?text=Dhiaan
+      <img src="https://via.placeholder.com/150?text=Sid" alt="Sid Menon">
+      <a href="#">Sid Menon<br><small>Vice President</small></a>
+    </div>
+    <div class="organizer">
+      <img src="https://via.placeholder.com/150?text=Vivaan" alt="Vivaan Gupta">
+      <a href="#">Vivaan Gupta<br><small>Secretary</small></a>
+    </div>
+    <div class="organizer">
+      <img src="https://via.placeholder.com/150?text=Ansh" alt="Ansh Patel">
+      <a href="#">Ansh Patel<br><small>Treasurer</small></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>FAQ</h2>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Who can participate?</span><span>+</span>
+    </div>
+    <div class="faq-answer">All ages under 18 and students of all skill levels!</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Do I need a team?</span><
