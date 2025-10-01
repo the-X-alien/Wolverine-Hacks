@@ -210,11 +210,11 @@
 
 <section id="organizers">
   <h2>Organizers</h2>
-  <div class="organizer" style="margin: 0 auto 40px;">
-    <img src="https://via.placeholder.com/150?text=Dhiaan" alt="Dhiaan Dave">
-    <a href="https://dhiaandave.vercel.app" target="_blank">Dhiaan Dave<br><small>Club President</small></a>
-  </div>
   <div class="organizer-grid">
+    <div class="organizer">
+      <img src="https://via.placeholder.com/150?text=Dhiaan" alt="Dhiaan Dave">
+      <a href="https://dhiaandave.vercel.app" target="_blank">Dhiaan Dave<br><small>Club President</small></a>
+    </div>
     <div class="organizer">
       <img src="https://via.placeholder.com/150?text=Sid" alt="Sid Menon">
       <a href="#">Sid Menon<br><small>Vice President</small></a>
@@ -240,4 +240,75 @@
   </div>
   <div class="faq-item">
     <div class="faq-question" onclick="toggleFAQ(this)">
-      <span>Do I need a team?</span><
+      <span>Do I need a team?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Nope! You can work solo or join a team at the event. We’ll help match you with others if you want.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>How much does it cost?</span><span>+</span>
+    </div>
+    <div class="faq-answer">It’s completely free! We’ll provide food, swag, and prizes thanks to our sponsors.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>What should I bring?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Bring a laptop, charger, and creativity! Optional: sleeping bag, snacks, and a water bottle.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Do I need prior coding experience?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Not at all. We’ll have workshops and mentors to help you learn new skills on the spot.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Will there be prizes?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Yes! We’ll have categories for beginners, creativity, technical skill, and more.</div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Wolverine Hacks • Made with ❤️ by Dhiaan Dave & the TRMS STEAM Club</p>
+  <p>Follow us on <a href="#" style="color:#00bcd4;">Instagram</a> • <a href="#" style="color:#00bcd4;">Twitter</a> • <a href="#" style="color:#00bcd4;">GitHub</a></p>
+</footer>
+
+<script>
+  // Countdown Timer
+  function updateCountdown() {
+    const eventDate = new Date("Feb 15, 2026 09:00:00").getTime(); // set exact date/time
+    const now = new Date().getTime();
+    const diff = eventDate - now;
+
+    if (diff <= 0) {
+      document.getElementById("timer").innerText = "Event has started!";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerText = `${days}d ${hours}h ${mins}m ${secs}s`;
+  }
+
+  setInterval(updateCountdown, 1000);
+
+  // FAQ toggle
+  function toggleFAQ(el) {
+    const answer = el.nextElementSibling;
+    if (answer.style.display === "block") {
+      answer.style.display = "none";
+      el.querySelector("span:last-child").innerText = "+";
+    } else {
+      answer.style.display = "block";
+      el.querySelector("span:last-child").innerText = "−";
+    }
+  }
+</script>
+
+</body>
+</html>
