@@ -99,31 +99,20 @@
       margin-top: 15px;
     }
 
-    /* Organizers */
-    .organizers-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .lead-organizer {
-      margin-bottom: 40px;
-    }
-
     .organizer-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 30px;
-      width: 100%;
-      max-width: 900px;
     }
 
     .organizer {
+      width: 250px;
       background: white;
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      width: 100%;
+      text-align: center;
     }
 
     .organizer img {
@@ -139,16 +128,9 @@
       color: #00bcd4;
       text-decoration: none;
       display: block;
-      font-size: 1.1em;
-    }
-
-    .organizer small {
-      display: block;
       margin-top: 5px;
-      color: #666;
     }
 
-    /* FAQ */
     .faq-item {
       text-align: left;
       margin: 10px auto;
@@ -191,6 +173,7 @@
 <nav>
   <a href="#about">About</a>
   <a href="#schedule">Schedule</a>
+  <a href="#venue">Venue</a>
   <a href="#prizes">Prizes</a>
   <a href="#sponsor">Sponsor</a>
   <a href="#register">Register</a>
@@ -212,17 +195,28 @@
   </div>
 </section>
 
+<section id="venue">
+  <h2>Venue</h2>
+  <div class="card">
+    <p>The event will be held at <strong>Thomas Russell Middle School</strong> in Milpitas, CA.</p>
+    <p>Address: 1500 Escuela Pkwy, Milpitas, CA 95035</p>
+    <div style="margin-top:20px;">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.505193193433!2d-121.898138!3d37.442228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcdc963a7935f%3A0x9c1d70fdb1e4e2f!2sThomas%20Russell%20Middle%20School!5e0!3m2!1sen!2sus!4v1696213872469!5m2!1sen!2sus" 
+        width="100%" 
+        height="400" 
+        style="border:0; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
 <section id="prizes">
   <h2>Prizes</h2>
   <div class="card">
-    <p>We’ll be awarding exciting prizes to the top projects, including:</p>
-    <ul style="text-align:left; max-width:600px; margin:auto;">
-      <li><strong>1st Place:</strong> $200 Amazon Gift Cards + Trophies</li>
-      <li><strong>2nd Place:</strong> $100 Amazon Gift Cards</li>
-      <li><strong>3rd Place:</strong> $50 Amazon Gift Cards</li>
-      <li>Special category prizes for Best Beginner Hack, Best Design, and Best Use of AI!</li>
-    </ul>
-    <p><em>Exact prizes may change as sponsors are confirmed.</em></p>
+    <p><strong>Prizes are TBD!</strong> We’ll be announcing some amazing rewards for winners, finalists, and standout participants. Stay tuned!</p>
   </div>
 </section>
 
@@ -246,30 +240,26 @@
 
 <section id="organizers">
   <h2>Organizers</h2>
-  <div class="organizers-wrapper">
-    <div class="lead-organizer">
-      <div class="organizer">
-        <img src="https://via.placeholder.com/150?text=Dhiaan" alt="Dhiaan Dave">
-        <a href="https://dhiaandave.vercel.app" target="_blank">Dhiaan Dave</a>
-        <small>Club President</small>
-      </div>
+  <div class="organizer-grid">
+    <div class="organizer">
+      <img src="https://via.placeholder.com/150?text=Dhiaan" alt="Dhiaan Dave">
+      <a href="https://dhiaandave.vercel.app" target="_blank">Dhiaan Dave</a>
+      <small>Club President</small>
     </div>
-    <div class="organizer-grid">
-      <div class="organizer">
-        <img src="https://via.placeholder.com/150?text=Sid" alt="Sid Menon">
-        <a href="#">Sid Menon</a>
-        <small>Vice President</small>
-      </div>
-      <div class="organizer">
-        <img src="https://via.placeholder.com/150?text=Vivaan" alt="Vivaan Gupta">
-        <a href="#">Vivaan Gupta</a>
-        <small>Secretary</small>
-      </div>
-      <div class="organizer">
-        <img src="https://via.placeholder.com/150?text=Ansh" alt="Ansh Patel">
-        <a href="#">Ansh Patel</a>
-        <small>Treasurer</small>
-      </div>
+    <div class="organizer">
+      <img src="https://via.placeholder.com/150?text=Sid" alt="Sid Menon">
+      <a href="#">Sid Menon</a>
+      <small>Vice President</small>
+    </div>
+    <div class="organizer">
+      <img src="https://via.placeholder.com/150?text=Vivaan" alt="Vivaan Gupta">
+      <a href="#">Vivaan Gupta</a>
+      <small>Secretary</small>
+    </div>
+    <div class="organizer">
+      <img src="https://via.placeholder.com/150?text=Ansh" alt="Ansh Patel">
+      <a href="#">Ansh Patel</a>
+      <small>Treasurer</small>
     </div>
   </div>
 </section>
@@ -277,34 +267,71 @@
 <section id="faq">
   <h2>FAQ</h2>
 
-  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Who can participate?</span><span>+</span></div><div class="faq-answer">All middle and high school students are welcome, regardless of prior experience!</div></div>
-  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Do I need a team?</span><span>+</span></div><div class="faq-answer">Nope! You can work solo or we’ll help you find teammates at the event.</div></div>
-  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Does it cost anything?</span><span>+</span></div><div class="faq-answer">No, Wolverine Hacks is completely free thanks to our sponsors.</div></div>
-  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>What should I bring?</span><span>+</span></div><div class="faq-answer">Bring a laptop, charger, and a sleeping bag (required if staying overnight), plus anything else you need to hack comfortably.</div></div>
-  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Do I need prior coding experience?</span><span>+</span></div><div class="faq-answer">Not at all! We’ll have mentors and workshops for all skill levels.</div></div>
-  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Will food be provided?</span><span>+</span></div><div class="faq-answer">Yes! We’ll provide meals, snacks, and drinks throughout the event.</div></div>
-  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>What can I build?</span><span>+</span></div><div class="faq-answer">Anything you want—apps, websites, games, or even hardware projects if you bring supplies!</div></div>
-  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>How are projects judged?</span><span>+</span></div><div class="faq-answer">Judges will evaluate based on creativity, technical difficulty, design, and presentation.</div></div>
-  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>What if I don’t finish my project?</span><span>+</span></div><div class="faq-answer">That’s totally okay! Hackathons are about learning and having fun, not just winning.</div></div>
-  <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>More questions?</span><span>+</span></div><div class="faq-answer">Feel free to email us at <a href="mailto:dhiaan.n.d@gmail.com">dhiaan.n.d@gmail.com</a>.</div></div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Who can participate?</span><span>+</span>
+    </div>
+    <div class="faq-answer">All ages under 18 and students of all skill levels!</div>
+  </div>
 
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Do I need a team?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Nope! You can come solo or form a team of up to 4 participants.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Is experience required?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Not at all. We welcome total beginners and advanced coders alike!</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>What should I bring?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Bring a laptop, charger, student ID, and a <strong>sleeping bag</strong>. Food will be provided.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>How much does it cost?</span><span>+</span>
+    </div>
+    <div class="faq-answer">It's 100% free thanks to our amazing sponsors!</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>Will there be food?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Yes! We’ll provide meals, snacks, and drinks throughout the event.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      <span>More questions?</span><span>+</span>
+    </div>
+    <div class="faq-answer">Email us at <a href="mailto:dhiaan.n.d@gmail.com">dhiaan.n.d@gmail.com</a> and we'll get back to you quickly!</div>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 Wolverine Hacks • Made with ❤️ by Dhiaan Dave & Team</p>
+  <p>© 2026 Wolverine Hacks • Made with ❤️ by Dhiaan Dave and the Thomas Russell STEAM Club</p>
 </footer>
 
 <script>
-  // Countdown Timer
-  const eventDate = new Date("February 21, 2026 09:00:00").getTime();
-  const timerElement = document.getElementById("timer");
+  // Countdown timer
+  const eventDate = new Date("February 14, 2026 09:00:00").getTime();
+  const timerEl = document.getElementById("timer");
 
-  setInterval(function() {
+  function updateTimer() {
     const now = new Date().getTime();
     const distance = eventDate - now;
 
     if (distance <= 0) {
-      timerElement.innerHTML = "The event has started!";
+      timerEl.innerHTML = "The hackathon has started!";
       return;
     }
 
@@ -313,14 +340,23 @@
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    timerElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-  }, 1000);
+    timerEl.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+  }
 
-  // FAQ Toggle
+  setInterval(updateTimer, 1000);
+
+  // FAQ toggle
   function toggleFAQ(el) {
     const answer = el.nextElementSibling;
-    answer.style.display = answer.style.display === "block" ? "none" : "block";
+    const isVisible = answer.style.display === "block";
+    document.querySelectorAll(".faq-answer").forEach(a => a.style.display = "none");
+    document.querySelectorAll(".faq-question span:last-child").forEach(s => s.textContent = "+");
+    if (!isVisible) {
+      answer.style.display = "block";
+      el.querySelector("span:last-child").textContent = "−";
+    }
   }
 </script>
+
 </body>
 </html>
