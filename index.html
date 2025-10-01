@@ -136,6 +136,54 @@
       background: #0097a7;
     }
 
+    .organizer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .organizer {
+      width: 150px;
+      text-align: center;
+    }
+
+    .organizer img {
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .organizer a {
+      display: block;
+      margin-top: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .faq-item {
+      text-align: left;
+      margin: 10px auto;
+      max-width: 700px;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+    }
+
     footer {
       background: var(--primary);
       color: white;
@@ -171,10 +219,10 @@
 <nav>
   <a href="#about">About</a>
   <a href="#schedule">Schedule</a>
-  <a href="#faq">FAQ</a>
   <a href="#sponsor">Sponsor</a>
   <a href="#register">Register</a>
   <a href="#organizers">Organizers</a>
+  <a href="#faq">FAQ</a>
 </nav>
 
 <section id="about">
@@ -188,15 +236,6 @@
   <h2>Schedule</h2>
   <div class="card">
     <p><em>The full schedule is currently TBD. We are finalizing whether the event will run for 12 or 24 hours. Stay tuned for updates!</em></p>
-  </div>
-</section>
-
-<section id="faq">
-  <h2>FAQ</h2>
-  <div class="card">
-    <p><strong>Who can participate?</strong><br/> All ages under 18 and students of all skill levels!</p>
-    <p><strong>Do I need a team?</strong><br/> You can join solo or form a team at the event.</p>
-    <p><strong>What should I bring?</strong><br/> A laptop, charger, and your creativity!</p>
   </div>
 </section>
 
@@ -226,25 +265,6 @@
 
 <section id="organizers">
   <h2>Organizers</h2>
-  <div class="card">
-    <p><strong>Club President:</strong> Dhiaan Dave</p>
-    <p><strong>Club Vice President:</strong> Sid Menon</p>
-    <p><strong>Club Secretary:</strong> Vivaan Gupta</p>
-    <p><strong>Club Treasurer:</strong> Ansh Patel</p>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2025 Thomas Russell STEAM Club • Wolverine Hacks</p>
-</footer>
-
-<script>
-  const eventDate = new Date("February 1, 2026 09:00:00").getTime();
-  const timerElement = document.getElementById("timer");
-
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-
-    if (distance < 0) {
-      timerElement.innerHTML = "Event is live!";
+  <div class="organizer-grid">
+    <div class="organizer">
+      <img src="https://via.placeholder.com/150?text=Dhiaan
